@@ -4,3 +4,5 @@ export type InitialStateType = {
   userProfile: boolean;
   notification: false;
 };
+
+export type CurrentModeType = "dark" | "light";
