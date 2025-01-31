@@ -9,7 +9,7 @@ registerLicense(
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <div className="w-full h-screen overflow-hidden flex flex-col dark:bg-main-dark-bg ">
+    <div className="w-full h-screen transition-all duration-300 overflow-hidden flex flex-col dark:bg-main-dark-bg ">
       <App />
     </div>
   </StrictMode>
