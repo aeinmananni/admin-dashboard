@@ -6,3 +6,10 @@ export type InitialStateType = {
 };
 
 export type CurrentModeType = "dark" | "light";
+
+export type ComponentsType = "shoppingCart" | "settings" | "menu";
+export type Components = {
+  title: string;
+  icon: React.ReactNode;
+  component: React.ReactNode;
+};

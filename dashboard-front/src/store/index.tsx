@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { InitialStateType, CurrentModeType } from "../models";
+import { InitialStateType, CurrentModeType, ComponentsType } from "../models";
 
 type DashboardStoreType = {
   activeMenu: boolean;
@@ -12,6 +12,10 @@ type DashboardStoreType = {
   setCurrentMode: (value: CurrentModeType) => void;
   themeSettings: boolean;
   setThemeSettings: (value: boolean) => void;
+  screenSize: number | null;
+  setScreenSize: (value: number | null) => void;
+  type: ComponentsType | null;
+  setType: (value: ComponentsType | null) => void;
 };
 
 export const useDashboardStoreManager = create<DashboardStoreType>()((set) => ({
@@ -26,6 +30,20 @@ export const useDashboardStoreManager = create<DashboardStoreType>()((set) => ({
   currentMode:
     (localStorage.getItem("currentMode") as CurrentModeType) || "dark",
   themeSettings: false,
+  screenSize: null,
+  type: null,
+  setType: (value: ComponentsType | null) => {
+    set({ type: null });
+    setTimeout(() => {
+      set({ type: value });
+    }, 400);
+  },
+
+  setScreenSize: (value: number | null) => {
+    set(() => ({
+      screenSize: value,
+    }));
+  },
   setActiveMenu: (value: boolean | ((c: boolean) => boolean)) => {
     set((state) => ({
       activeMenu: typeof value === "function" ? value(state.activeMenu) : value,
