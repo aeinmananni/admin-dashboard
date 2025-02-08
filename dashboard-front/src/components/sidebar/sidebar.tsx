@@ -7,6 +7,7 @@ type SidebarProps = {
 
 export default function Sidebar({ componentsType }: SidebarProps) {
   const components = useSetComponents(componentsType);
+
   return (
     <div
       className={`${

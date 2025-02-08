@@ -5,7 +5,9 @@ import { Tooltip } from "../custom/tooltip";
 import { Header } from "../components/header";
 import { Sidebar } from "../components/sidebar";
 import { useEffect } from "react";
+import { useChangeLanguage } from "../hooks/useChangeLanguage";
 export default function Home() {
+  const { t } = useChangeLanguage();
   const currentColor = useDashboardStoreManager((s) => s.currentColor);
   const currentMode = useDashboardStoreManager((s) => s.currentMode);
   const setType = useDashboardStoreManager((s) => s.setType);
@@ -17,12 +19,16 @@ export default function Home() {
       document.documentElement.classList.remove("dark");
     }
   }, [currentMode]);
+
   return (
     <div className="w-full h-full relative">
       <Header />
       <h1 className="dark:text-slate-200 text-slate-700">Home</h1>
 
-      <Tooltip text="تنظیمات" className="inline-block fixed bottom-8 left-4">
+      <Tooltip
+        text={t("setting")}
+        className="inline-block fixed bottom-8 left-4"
+      >
         <Button
           onClick={() => setType("settings")}
           style={{ backgroundColor: currentColor }}

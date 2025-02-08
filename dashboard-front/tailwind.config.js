@@ -8,6 +8,10 @@ export default {
       body: ["Open Sans", "sans-serif"],
     },
     extend: {
+      direction: {
+        rtl: "rtl",
+        ltr: "ltr",
+      },
       fontSize: {
         14: "14px",
       },

@@ -2,24 +2,25 @@ import { ComponentsType } from "../../../models";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { CgMenuBoxed } from "react-icons/cg";
-
+import { useChangeLanguage } from "../../../hooks/useChangeLanguage";
 export const useSetComponents = (component: ComponentsType | null) => {
+  const { t } = useChangeLanguage();
   switch (component) {
     case "menu":
       return {
-        title: "منو",
+        title: t("menu"),
         icon: <CgMenuBoxed size={20} />,
         component: <h1>Menu</h1>,
       };
     case "settings":
       return {
-        title: "تنظیمات",
+        title: t("setting"),
         icon: <IoSettingsSharp />,
         component: <h1>Setting</h1>,
       };
     case "shoppingCart":
       return {
-        title: "سبد خرید",
+        title: t("shoppingCart"),
         icon: <FaShoppingCart />,
         component: <h1>ShoppingCart</h1>,
       };
