@@ -27,7 +27,7 @@ export default function Home() {
 
       <Tooltip
         text={t("setting")}
-        className="inline-block fixed bottom-8 left-4"
+        className="inline-block fixed bottom-8 end-4"
       >
         <Button
           onClick={() => setType("settings")}
