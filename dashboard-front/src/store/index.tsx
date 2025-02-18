@@ -15,7 +15,9 @@ type DashboardStoreType = {
   screenSize: number | null;
   setScreenSize: (value: number | null) => void;
   type: ComponentsType | null;
-  setType: (value: ComponentsType | null) => void;
+  setType: (
+    value: ComponentsType | null | ((v: ComponentsType) => ComponentsType)
+  ) => void;
   isTranslate: boolean;
   setIsTranslate: (v: boolean | ((v: boolean) => boolean)) => Promise<void>;
 };
@@ -40,10 +42,25 @@ export const useDashboardStoreManager = create<DashboardStoreType>()((set) => ({
       isTranslate: typeof v === "function" ? v(state.isTranslate) : v,
     }));
   },
-  setType: (value: ComponentsType | null) => {
-    set({ type: null });
+  setType: (
+    value: ComponentsType | null | ((c: ComponentsType) => ComponentsType)
+  ) => {
+    set((state) => {
+      const newValue =
+        typeof value === "function"
+          ? value(state.type as ComponentsType)
+          : value;
+      if (state.type === newValue) return state;
+      return { type: null };
+    });
+
     setTimeout(() => {
-      set({ type: value });
+      set((state) => ({
+        type:
+          typeof value === "function"
+            ? value(state?.type as ComponentsType)
+            : value,
+      }));
     }, 400);
   },
 

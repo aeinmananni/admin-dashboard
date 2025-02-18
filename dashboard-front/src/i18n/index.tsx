@@ -17,6 +17,13 @@ const resources = {
       menu: "منو",
     },
   },
+  ar: {
+    translation: {
+      setting: "الإعدادات",
+      shoppingCart: "عربة التسوق",
+      menu: "القائمة",
+    },
+  },
 };
 
 i18n
