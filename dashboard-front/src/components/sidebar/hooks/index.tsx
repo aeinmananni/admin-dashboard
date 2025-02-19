@@ -3,6 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { CgMenuBoxed } from "react-icons/cg";
 import { useChangeLanguage } from "../../../hooks/useChangeLanguage";
+import { Menus } from "../components/menus";
 export const useSetComponents = (component: ComponentsType | null) => {
   const { t } = useChangeLanguage();
   switch (component) {
@@ -10,7 +11,7 @@ export const useSetComponents = (component: ComponentsType | null) => {
       return {
         title: t("menu"),
         icon: <CgMenuBoxed size={20} />,
-        component: <h1>Menu</h1>,
+        component: <Menus />,
       };
     case "settings":
       return {

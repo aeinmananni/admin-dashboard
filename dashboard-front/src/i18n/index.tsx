@@ -8,6 +8,10 @@ const resources = {
       setting: "setting",
       shoppingCart: "shoppingCart",
       menu: "menu",
+      dashboard: "dashboard",
+      pages: "pages",
+      applications: "applications",
+      charts: "charts",
     },
   },
   fa: {
@@ -15,6 +19,10 @@ const resources = {
       setting: "تنظیمات",
       shoppingCart: "سبدخرید",
       menu: "منو",
+      dashboard: "داشبورد",
+      pages: "صفحات",
+      applications: "اپلیکیشن ها",
+      charts: "نمودار ها",
     },
   },
   ar: {
@@ -22,6 +30,10 @@ const resources = {
       setting: "الإعدادات",
       shoppingCart: "عربة التسوق",
       menu: "القائمة",
+      dashboard: "لوحة التحكم",
+      pages: "صفحات",
+      applications: "التطبيقات",
+      charts: "الرسوم البيانية",
     },
   },
 };

@@ -13,3 +13,8 @@ export type Components = {
   icon: React.ReactNode;
   component: React.ReactNode;
 };
+
+export type ParentLinks = {
+  id: number;
+  title: string;
+};

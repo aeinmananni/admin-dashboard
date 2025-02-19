@@ -8,12 +8,11 @@ type HeaderSidebarProps = {
 
 export default function HeaderSidebar({ title, icon }: HeaderSidebarProps) {
   const setType = useDashboardStoreManager((s) => s.setType);
-  const isTranslate = useDashboardStoreManager((s) => s.isTranslate);
 
-  const { t } = useChangeLanguage();
+  const { t, i18n } = useChangeLanguage();
   return (
     <div
-      style={{ direction: isTranslate ? "rtl" : "ltr" }}
+      style={{ direction: i18n.language === "en" ? "ltr" : "rtl" }}
       className={`flex justify-between p-1 items-center dark:text-white text-slate-600`}
     >
       <div className="flex w-full gap-2 items-center">
