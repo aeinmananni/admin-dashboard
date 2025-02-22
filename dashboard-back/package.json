@@ -1,0 +1,32 @@
+{
+  "name": "dashboard-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "watch": "npm run clean && tsc --watch",
+    "serve": "nodemon dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/config": "^3.3.5",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/mssql": "^9.1.7",
+    "@types/node": "^22.13.5",
+    "compression": "^1.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "dotenv-safe": "^9.1.0",
+    "express": "^4.21.2",
+    "mssql": "^11.0.1",
+    "rimraf": "^6.0.1",
+    "typescripte": "^1.0.0"
+  }
+}
