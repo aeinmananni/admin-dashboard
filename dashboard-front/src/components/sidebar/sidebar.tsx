@@ -22,7 +22,7 @@ export default function Sidebar({ componentsType }: SidebarProps) {
           : `${
               i18n.language === "en" ? "-translate-x-full" : "translate-x-full"
             } `
-      } w-1/6 flex flex-col fixed bg-white h-full p-1 overflow-y-auto md:overflow-hidden md:hover:overflow-y-auto z-50 dark:bg-secondary-dark-bg top-0 start-0 transition-all duration-300 shadow-md dark:shadow-slate-200 shadow-slate-200 gap-3`}
+      } w-1/6 flex flex-col fixed bg-white h-full p-1 overflow-y-auto md:overflow-hidden md:hover:overflow-y-auto z-50 dark:bg-secondary-dark-bg top-0 start-0 transition-all duration-300 shadow-md dark:shadow-slate-200 shadow-slate-200 gap-3 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-track-gray-200`}
     >
       <HeaderSidebar title={components?.title ?? ""} icon={components?.icon} />
       <hr className="dark:text-white text-gray-600" />

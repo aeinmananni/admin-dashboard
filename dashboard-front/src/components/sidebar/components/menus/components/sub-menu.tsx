@@ -7,7 +7,7 @@ type MenuProps = {
   children?: React.ReactNode;
 };
 
-const Menu = ({ title, children }: MenuProps) => {
+const SubMenu = ({ title, children }: MenuProps) => {
   const [show, setShow] = useState<boolean>(false);
   const currentColor = useDashboardStoreManager((s) => s.currentColor);
   return (
@@ -35,10 +35,12 @@ const Menu = ({ title, children }: MenuProps) => {
           show ? "max-h-40" : "max-h-0"
         } transition-all duration-300`}
       >
-        <div className="mt-1 w-full h-full">{children}</div>
+        <div className="mt-1 w-full h-full flex flex-col pb-2 gap-1">
+          {children}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Menu;
+export default SubMenu;

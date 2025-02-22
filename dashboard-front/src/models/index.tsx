@@ -14,7 +14,8 @@ export type Components = {
   component: React.ReactNode;
 };
 
-export type ParentLinks = {
+export type LinkType = {
   id: number;
   title: string;
+  topId?: number;
 };
